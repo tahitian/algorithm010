@@ -9,6 +9,8 @@ class Solution:
         其它：
             边界条件判断优化：在原矩形的左边和上边分别加上一列 0 和一行 0
             空间优化：二维的缓存变成一维的缓存
+        时间复杂度：O(m*n)
+        空间复杂度：O(n)
         """
         if not matrix or len(matrix[0]) == 0:
             return 0
