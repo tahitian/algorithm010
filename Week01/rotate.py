@@ -4,7 +4,7 @@ from typing import List
 class Solution:
     def rotate(self, nums: List[int], k: int) -> None:
         """
-        逐个交换元素，注意 k 了 len(nums) 存在最小公约数的情况
+        逐个交换元素，注意 k 和 len(nums) 存在最小公约数的情况
         通过将初始位置的值标记为 None 来判断是否返回了初始位置
         """
         if not nums or k % len(nums) == 0:
