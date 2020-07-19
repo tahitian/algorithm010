@@ -17,15 +17,17 @@ class Solution:
 
         height, width = len(matrix), len(matrix[0])
         max_side = 0
-        dp = [0] * (width + 1)
+        dp = [0] * (width+1)
 
         for i in range(height):
             northwest = 0
             for j in range(width):
-                next_northwest = dp[j + 1]
+                next_northwest = dp[j+1]
                 if matrix[i][j] == "1":
-                    dp[j + 1] = min(dp[j], dp[j + 1], northwest) + 1
-                    max_side = max(max_side, dp[j + 1])
+                    dp[j+1] = min(dp[j], dp[j+1], northwest) + 1
+                    max_side = max(max_side, dp[j+1])
+                else:
+                    dp[j+1] = 0
                 northwest = next_northwest
 
         return max_side * max_side
